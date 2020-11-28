@@ -11,6 +11,8 @@ public class ResponseLogin {
 
 class Data1{
     String id;
-    String phonenumber;
+    String username;
     String token;
+    String avatar;
+    String active;
 }
