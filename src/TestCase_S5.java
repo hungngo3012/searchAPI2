@@ -4,8 +4,7 @@ package com.company;
 public class TestCase_S5 {
     public static void Unittest_S5() throws Exception{
         ResponseLogin resl = TestCaseLoginAPI.callAPI("0965223417","308abcd910","12rt");
-        String token = resl.data1[2];
-        ;
+        String token = resl.data1.token;
         String keyword = "hb";
         String user_id = "348147";
         int index = 4;

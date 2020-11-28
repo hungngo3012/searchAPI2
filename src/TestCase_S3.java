@@ -4,7 +4,7 @@ package com.company;
 public class TestCase_S3 {
     public static void UnitTest_S3() throws Exception{
         ResponseLogin res = TestCaseLoginAPI.callAPI("0965223417","308abcd910","12rt");
-        String token = res.data1[2];
+        String token = res.data1.token;
         String keyword = "hb";
         String user_id = "348147";
         int index = 4;

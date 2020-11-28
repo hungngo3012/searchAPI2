@@ -43,24 +43,7 @@ public class TestCaseSearchAPI {
             }
             Gson g = new Gson();
             System.out.println(content.toString());
-            JSONObject objectJson = new JSONObject(content.toString());
-            String id = objectJson.getJSONObject("data").getString("id");
-            String image = objectJson.getJSONObject("data").getString("image");
-            String video = objectJson.getJSONObject("data").getString("video");
-            String like = objectJson.getJSONObject("data").getString("like");
-            String comment = objectJson.getJSONObject("data").getString("comment");
-            String is_liked = objectJson.getJSONObject("data").getString("is_liked");
-            String author = objectJson.getJSONObject("data").getString("author");
-            String described = objectJson.getJSONObject("data").getString("describe");
             ResponseSearch t =  g.fromJson(content.toString(), ResponseSearch.class);
-            t.data[0] = id;
-            t.data[1] = image;
-            t.data[2] = video;
-            t.data[3] = like;
-            t.data[4] = comment;
-            t.data[5] = is_liked;
-            t.data[6] = author;
-            t.data[7] = described;
             return t;
         } finally {
             connection.disconnect();
