@@ -11,7 +11,8 @@ public class TestCase_S3 {
         int count = 2;
         System.out.println("Unit test 3: Cant't find data you are looking for");
         ResponseSearch ress = TestCaseSearchAPI.callAPI(token, keyword, user_id, index, count);
-        assert "9994".equals(ress.code):ress.message+ " with code " + ress.code;
+        if (!(res.code.equals("9994"))) throw new AssertionError();
+        if (!(res.message.equals("No Data or end of list data"))) throw new AssertionError();
         System.out.println("Can't find anything matched");
     }
 }

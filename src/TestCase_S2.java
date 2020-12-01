@@ -12,6 +12,8 @@ public class TestCase_S2 {
         System.out.println("Unit test 2: Token is incorrect");
         if(token.length() < 6){
             ResponseSearch ress = TestCaseSearchAPI.callAPI(token, keyword, user_id, index, count);
+            if ((!"9998".equals(ress.code))) throw new AssertionError();
+            if ((!"Token is invalid".equals(ress.message))) throw new AssertionError();
             if ((!"1004".equals(ress.code))) throw new AssertionError();
             if ((!"Parameter value is invalid".equals(ress.message))) throw new AssertionError();
             if (((!res.code.equals("1000")))) throw new AssertionError();

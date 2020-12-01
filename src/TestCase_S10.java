@@ -12,7 +12,8 @@ public class TestCase_S10 {
         int i;
         System.out.println("Unit test 11: Cant connect to internet");
         ResponseSearch ress = TestCaseSearchAPI.callAPI(token, keyword, user_id, index, count);
-        if (!(ress.code.equals("1011"))) throw new AssertionError();
+        if (!(res.code.equals("1011"))) throw new AssertionError();
+        if (!(res.message.equals("Could not publish this post"))) throw new AssertionError();
         ress.data = null;
     }
 }

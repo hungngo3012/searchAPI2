@@ -27,7 +27,7 @@ public class TestCaseSearchAPI {
         System.out.println("CALL API: " + url);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-        connection.setRequestMethod("GET");
+        connection.setRequestMethod("POST");
         connection.setDoOutput(true);
         try (DataOutputStream writer = new DataOutputStream(connection.getOutputStream())) {
 

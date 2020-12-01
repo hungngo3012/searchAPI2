@@ -13,7 +13,8 @@ public class TestCase_S6 {
         if(keyword.equals("") || keyword == null) System.out.println("Not have keyword");
         else{
             ResponseSearch res = TestCaseSearchAPI.callAPI(token, keyword, user_id, index, count);
-            assert "1004".equals(res.code):res.message+ " with code " + res.code;
+            if (!(res.code.equals("1004"))) throw new AssertionError();
+            if (!(res.message.equals("Parameter value is invalid"))) throw new AssertionError();
         }
     }
 }

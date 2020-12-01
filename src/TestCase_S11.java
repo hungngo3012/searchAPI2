@@ -12,7 +12,8 @@ public class TestCase_S11 {
         int i;
         System.out.println("Unit test 10: CEN error");
         ResponseSearch ress = TestCaseSearchAPI.callAPI(token, keyword, user_id, index, count);
-        if (!(ress.code.equals("1001"))) throw new AssertionError();
+        if (!(res.code.equals("1001"))) throw new AssertionError();
+        if (!(res.message.equals("Can not connect to DB"))) throw new AssertionError();
         System.out.println("Can not connect to internet");
     }
 }
